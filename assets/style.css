@@ -1,0 +1,67 @@
+header {
+  height: 10vh;
+}
+main {
+  min-height: 80vh;
+}
+footer {
+  height: 10vh;
+  padding-inline: 2rem;
+}
+nav img {
+  max-height: 7vh;
+}
+footer img {
+  width: 2.4rem;
+  border-radius: 50%;
+}
+footer p {
+  font-size: 2rem;
+}
+.navbar-nav {
+  margin-left: auto;
+}
+.nav-link {
+  border-top: 1px solid gray;
+  padding: 0.1rem 0.6rem !important;
+  border-radius: 5px;
+}
+.nav-link:hover {
+  background-color: hsl(0 0% 15%);
+  color: azure !important;
+}
+.hero {
+  background-color: hsl(0 0% 15%);
+  color: azure;
+  display: flex;
+  height: 10vh;
+  justify-content: center;
+  align-items: center;
+}
+.filters {
+  align-items: center;
+  justify-content: center;
+}
+.filters .dropdown {
+  margin-block: 1rem;
+}
+.searchbar {
+  margin: 1rem;
+  max-width: 500px;
+}
+.searchbar input {
+  padding: 0.7rem 1rem;
+}
+.searchbar button {
+  height: 3rem;
+}
+.dropdown-menu {
+  padding: 0.5rem !important;
+  transform: none !important;
+}
+.cards {
+  padding-block: 2rem;
+}
+#logo-whats {
+  width: 2rem;
+}
