@@ -1,12 +1,24 @@
+:root {
+  --primary: #fcd25e;
+  --secondary: hsl(0 0% 15%);
+  --text: #f2e8cf;
+  --link-text: black;
+}
 header {
-  height: 10vh;
+  height: 5vh;
+}
+#nav {
+  background-color: var(--secondary) !important;
 }
 main {
-  min-height: 80vh;
+  min-height: 50vh;
+  background-color: #f2e8cf;
 }
 footer {
   height: 10vh;
   padding-inline: 2rem;
+  background-color: var(--secondary);
+  color: var(--text);
 }
 nav img {
   max-height: 7vh;
@@ -22,17 +34,18 @@ footer p {
   margin-left: auto;
 }
 .nav-link {
-  border-top: 1px solid gray;
+  border-top: 3px solid var(--text);
   padding: 0.1rem 0.6rem !important;
   border-radius: 5px;
+  color: var(--text) !important;
 }
 .nav-link:hover {
-  background-color: hsl(0 0% 15%);
-  color: azure !important;
+  background-color: var(--text);
+  color: var(--link-text) !important;
 }
 .hero {
-  background-color: hsl(0 0% 15%);
-  color: azure;
+  background-color: var(--primary);
+  color: var(--link-text);
   display: flex;
   height: 10vh;
   justify-content: center;
@@ -60,8 +73,17 @@ footer p {
   transform: none !important;
 }
 .cards {
-  padding-block: 2rem;
+  padding: 2rem;
+  padding-bottom: 5rem;
 }
+#logo-face {
+  width: 2rem;
+  color: transparent;
+}
+.socials a {
+  color: transparent !important;
+}
+
 #logo-whats {
   width: 2rem;
 }
