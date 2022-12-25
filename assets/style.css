@@ -4,35 +4,16 @@
   --text: #f2e8cf;
   --link-text: black;
 }
+/*Header*/
 header {
   height: 5vh;
 }
 #nav {
   background-color: var(--secondary) !important;
 }
-main {
-  min-height: 83vh;
-  background-color: #f2e8cf;
-}
-footer {
-  height: 10vh;
-  padding-inline: 2rem;
-  background-color: var(--secondary);
-  color: var(--text);
-}
 nav img {
   max-height: 7vh;
   padding-left: 2rem;
-}
-footer img {
-  width: 2.4rem;
-  border-radius: 50%;
-}
-p {
-  margin: 0 !important;
-}
-footer p {
-  font-size: 2rem;
 }
 .navbar-nav {
   margin-left: auto;
@@ -50,6 +31,14 @@ footer p {
   background-color: var(--text);
   color: var(--link-text) !important;
 }
+/*Main*/
+main {
+  min-height: 83vh;
+  background-color: #f2e8cf;
+}
+p {
+  margin: 0 !important;
+}
 .hero {
   background-color: var(--primary);
   color: var(--link-text);
@@ -58,6 +47,7 @@ footer p {
   justify-content: center;
   align-items: center;
 }
+/*Main - Filters*/
 .filters {
   padding: 2rem !important;
   align-items: center;
@@ -80,6 +70,7 @@ footer p {
   padding: 0.5rem !important;
   transform: none !important;
 }
+/*Main - Cards*/
 .cards {
   padding-inline: 2rem;
   padding-bottom: 5rem;
@@ -125,6 +116,20 @@ h5 {
   object-fit: cover;
   height: 300px;
 }
+/*Footer*/
+footer {
+  height: 10vh;
+  padding-inline: 2rem;
+  background-color: var(--secondary);
+  color: var(--text);
+}
+footer img {
+  width: 2.4rem;
+  border-radius: 50%;
+}
+footer p {
+  font-size: 2rem;
+}
 #logo-face {
   width: 2rem;
   color: transparent;
@@ -141,6 +146,7 @@ h5 {
 #logo-whats {
   width: 2rem;
 }
+/*Contact*/
 .contact-form {
   padding-block: 5rem;
 }
@@ -163,6 +169,11 @@ fieldset label {
   align-self: flex-start;
   font-size: 1.4rem;
 }
+/*Stats*/
+table {
+  margin-block: 2rem;
+}
+/*Detail*/
 #detail-card {
   height: 70vh !important;
   align-self: center;
@@ -188,6 +199,7 @@ fieldset label {
   margin-block: 2rem;
   border-radius: 5px;
 }
+/*Media Queries*/
 @media (max-width: 425px) {
   nav img {
     padding: 0;
@@ -239,5 +251,8 @@ fieldset label {
     height: 50%;
     align-self: center;
     align-items: center;
+  }
+  .table {
+    max-width: clamp(50%, 50% + 10vw, 70%) !important;
   }
 }
