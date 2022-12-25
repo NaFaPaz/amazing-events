@@ -11,7 +11,7 @@ header {
   background-color: var(--secondary) !important;
 }
 main {
-  min-height: 50vh;
+  min-height: 85vh;
   background-color: #f2e8cf;
 }
 footer {
@@ -22,16 +22,23 @@ footer {
 }
 nav img {
   max-height: 7vh;
+  padding-left: 2rem;
 }
 footer img {
   width: 2.4rem;
   border-radius: 50%;
+}
+p {
+  margin: 0 !important;
 }
 footer p {
   font-size: 2rem;
 }
 .navbar-nav {
   margin-left: auto;
+}
+#navbarNavAltMarkup {
+  padding: 2rem !important;
 }
 .nav-link {
   border-top: 3px solid var(--text);
@@ -76,14 +83,72 @@ footer p {
   padding: 2rem;
   padding-bottom: 5rem;
 }
+.card-bottom {
+  padding-top: 1.5rem;
+  justify-content: space-between;
+}
+.card-bottom p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.card-body h5 {
+  text-align: center;
+}
+.card-bottom a {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+.card-bottom a:hover,
+.card-bottom a:active,
+.card-bottom a:focus {
+  background-color: var(--text) !important;
+  color: black !important;
+  border-color: black !important;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card {
+  align-self: stretch;
+  height: 500px;
+}
+.card img {
+  object-fit: cover;
+  height: 300px;
+}
 #logo-face {
   width: 2rem;
   color: transparent;
 }
+.socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
 .socials a {
   color: transparent !important;
 }
-
 #logo-whats {
   width: 2rem;
+}
+@media (max-width: 350px) {
+  nav img {
+    padding: 0;
+  }
+  nav > div {
+    padding: 0 !important;
+  }
+  .socials {
+    justify-content: initial;
+    gap: 1rem;
+  }
+  .cards {
+    padding-inline: 1rem;
+    align-items: center !important;
+    flex-direction: row !important;
+  }
 }
