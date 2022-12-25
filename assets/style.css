@@ -93,9 +93,10 @@ footer p {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.cards h5 {
+h5 {
   text-align: center;
   padding-block: 1rem;
+  width: 100%;
 }
 .card-title {
   background-color: var(--primary) !important;
@@ -162,7 +163,31 @@ fieldset label {
   align-self: flex-start;
   font-size: 1.4rem;
 }
-
+#detail-card {
+  height: 70vh !important;
+  align-self: center;
+  max-width: 70vw !important;
+}
+#detail-card img {
+  width: 100%;
+  height: 100%;
+}
+#detail-card > div {
+  width: 100%;
+}
+.category {
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  border-radius: 15px;
+  background-color: var(--link-text);
+  color: var(--text);
+  padding: 0.2rem 1rem;
+}
+.card-detail-bottom {
+  background-color: var(--primary);
+  margin-block: 2rem;
+  border-radius: 5px;
+}
 @media (max-width: 425px) {
   nav img {
     padding: 0;
@@ -182,14 +207,37 @@ fieldset label {
   fieldset {
     width: 95vw;
   }
+  #detail-card {
+    max-width: 95vw !important;
+  }
+  .card-detail-bottom {
+    height: 100%;
+  }
 }
 @media (min-width: 765px) {
   fieldset {
     width: 50vw;
   }
+  #detail-card > div {
+    height: 100%;
+  }
 }
 @media (min-width: 1025px) {
   fieldset {
     width: 35vw;
+  }
+  #detail-card img {
+    height: 100%;
+  }
+  #detail-card > div {
+    width: auto !important;
+  }
+  .col-lg-8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50%;
+    align-self: center;
+    align-items: center;
   }
 }
