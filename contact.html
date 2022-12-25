@@ -27,7 +27,10 @@
   <body>
     <nav id="nav" class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid justify-content-between">
-        <img src="./assets/images/Logo Amazing Events.png" alt="" />
+        <img
+          src="./assets/images/Logo Amazing Events.png"
+          alt="amazing-events-logo"
+        />
         <button
           class="navbar-toggler"
           type="button"
@@ -54,6 +57,19 @@
       <section class="hero">
         <h1>Contact us</h1>
       </section>
+      <form class="contact-form d-flex justify-content-center">
+        <fieldset
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
+          <label for="name"> Name: </label>
+          <input type="text" name="name" id="name" />
+          <label for="email"> Email: </label>
+          <input type="email" name="email" id="email" />
+          <label for="message"> Message: </label>
+          <textarea type="text" name="message" id="message" rows="8"></textarea>
+          <input type="submit" value="Submit" />
+        </fieldset>
+      </form>
     </main>
     <footer class="d-flex justify-content-between align-items-center">
       <div class="socials">

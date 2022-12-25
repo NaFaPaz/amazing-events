@@ -11,7 +11,7 @@ header {
   background-color: var(--secondary) !important;
 }
 main {
-  min-height: 85vh;
+  min-height: 83vh;
   background-color: #f2e8cf;
 }
 footer {
@@ -59,6 +59,7 @@ footer p {
   align-items: center;
 }
 .filters {
+  padding: 2rem !important;
   align-items: center;
   justify-content: center;
 }
@@ -80,7 +81,7 @@ footer p {
   transform: none !important;
 }
 .cards {
-  padding: 2rem;
+  padding-inline: 2rem;
   padding-bottom: 5rem;
 }
 .card-bottom {
@@ -92,8 +93,12 @@ footer p {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.card-body h5 {
+.cards h5 {
   text-align: center;
+  padding-block: 1rem;
+}
+.card-title {
+  background-color: var(--primary) !important;
 }
 .card-bottom a {
   background-color: var(--secondary);
@@ -135,7 +140,30 @@ footer p {
 #logo-whats {
   width: 2rem;
 }
-@media (max-width: 350px) {
+.contact-form {
+  padding-block: 5rem;
+}
+fieldset {
+  width: 70vw;
+}
+fieldset :where(input, textarea, label) {
+  width: 100%;
+}
+fieldset input[type='submit'] {
+  max-width: 30%;
+  align-self: flex-end;
+  margin-block: 1.5rem;
+  padding-block: 0.3rem;
+  background-color: var(--secondary);
+  color: var(--text);
+  border-radius: 6px;
+}
+fieldset label {
+  align-self: flex-start;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 425px) {
   nav img {
     padding: 0;
   }
@@ -150,5 +178,18 @@ footer p {
     padding-inline: 1rem;
     align-items: center !important;
     flex-direction: row !important;
+  }
+  fieldset {
+    width: 95vw;
+  }
+}
+@media (min-width: 765px) {
+  fieldset {
+    width: 50vw;
+  }
+}
+@media (min-width: 1025px) {
+  fieldset {
+    width: 35vw;
   }
 }
