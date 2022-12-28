@@ -52,7 +52,5 @@ function cardTemplate(cardsData, filter) {
   return template;
 }
 let cards = document.querySelector('.cards');
-const templateHome = cardTemplate(data.events);
 const templatePast = cardTemplate(data.events, 'past');
-const templateUpcoming = cardTemplate(data.events, 'upcoming');
-cards.innerHTML = templateHome;
+cards.innerHTML = templatePast;
