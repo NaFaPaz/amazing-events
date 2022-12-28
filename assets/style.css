@@ -152,9 +152,17 @@ footer p {
 }
 fieldset {
   width: 70vw;
+  border-radius: 8px !important;
+  padding: 2rem !important;
+  border: 2px solid gray !important;
+  background-color: var(--primary);
 }
 fieldset :where(input, textarea, label) {
   width: 100%;
+}
+fieldset :where(input, textarea) {
+  border-radius: 5px;
+  padding: 0.5rem;
 }
 fieldset input[type='submit'] {
   max-width: 30%;
@@ -171,11 +179,23 @@ fieldset label {
 }
 /*Stats*/
 table {
-  margin-block: 2rem;
+  margin-top: 2rem;
+  max-width: 95vw !important;
+}
+tbody,
+thead {
+  border-radius: 10px !important;
+}
+.table-subh {
+  background-color: var(--primary);
+}
+td,
+th {
+  width: 33%;
+  border: 1px solid gray !important;
 }
 /*Detail*/
 #detail-card {
-  height: 70vh !important;
   align-self: center;
   max-width: 70vw !important;
 }
@@ -196,8 +216,12 @@ table {
 }
 .card-detail-bottom {
   background-color: var(--primary);
-  margin-block: 2rem;
+  margin-top: 0.5rem;
   border-radius: 5px;
+  height: 100% !important;
+}
+.col-lg-8 {
+  height: 100%;
 }
 /*Media Queries*/
 @media (max-width: 425px) {
@@ -222,9 +246,6 @@ table {
   #detail-card {
     max-width: 95vw !important;
   }
-  .card-detail-bottom {
-    height: 100%;
-  }
 }
 @media (min-width: 765px) {
   fieldset {
@@ -248,7 +269,6 @@ table {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 50%;
     align-self: center;
     align-items: center;
   }
