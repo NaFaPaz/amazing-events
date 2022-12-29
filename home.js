@@ -37,11 +37,11 @@ function cardEvents(cardsData, filter) {
   return events;
 }
 function showTemplate(filteredEvents) {
-  let template = [];
+  let template = '';
   for (let event of filteredEvents) {
-    template.push(fillCard(event));
+    template += fillCard(event);
   }
-  return template.toString();
+  return template;
 }
 let cards = document.querySelector('.cards');
 let eventsCards = cardEvents(data.events);
