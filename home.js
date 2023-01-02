@@ -1,3 +1,4 @@
+//card template
 function fillCard(event) {
   return `
       <div class="card" style="width: 18rem">
@@ -19,6 +20,7 @@ function fillCard(event) {
         </div>
         `;
 }
+//separate events on past/future/all
 function cardEvents(cardsData, filter) {
   let events = [];
   for (let card of cardsData) {
@@ -36,6 +38,7 @@ function cardEvents(cardsData, filter) {
   }
   return events;
 }
+//full template to add to html
 function showTemplate(filteredEvents) {
   let template = '';
   for (let event of filteredEvents) {
@@ -64,6 +67,7 @@ searchBar.addEventListener('input', (e) => {
   let resultsTemplate = searchEvents(eventsCards, query);
   cards.innerHTML = showTemplate(resultsTemplate);
 });
+//checkboxs
 function checksFilter(events, checks) {
   let filtered = [];
   for (let event of events) {
