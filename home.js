@@ -49,7 +49,6 @@ function showTemplate(filteredEvents) {
 let cards = document.querySelector('.cards');
 let eventsCards = cardEvents(data.events);
 cards.innerHTML = showTemplate(eventsCards);
-
 //filters
 //search
 function searchEvents(events, query) {
@@ -62,36 +61,82 @@ function searchEvents(events, query) {
   return results;
 }
 let searchBar = document.querySelector('input[type="search"]');
-searchBar.addEventListener('input', (e) => {
-  let query = e.target.value.toLowerCase().trim();
+searchBar.addEventListener('input', crossFilters);
+function searchFilter(searchBar) {
+  let query = searchBar.value.toLowerCase().trim();
   let resultsTemplate = searchEvents(eventsCards, query);
-  cards.innerHTML = showTemplate(resultsTemplate);
-});
+  return resultsTemplate;
+}
 //checkboxs
-function checksFilter(events, checks) {
+function checkboxTemplate(label) {
+  return `<div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="${label}"
+                />
+                <label class="form-check-label" for="${label}"
+                  >${
+                    label[0].toUpperCase() +
+                    label.replace('-', ' ').slice(1, label.length)
+                  }</label
+                >
+              </div>`;
+}
+let checksLabel = [
+  'food-fair',
+  'museum',
+  'costume-party',
+  'music-concert',
+  'race',
+  'book-exchange',
+  'cinema',
+];
+let checksContainer = document.querySelector('#checks');
+function renderChecks() {
+  let template = '';
+  checksLabel.forEach((label) => (template += checkboxTemplate(label)));
+  return template;
+}
+checksContainer.innerHTML = renderChecks();
+function checksEvents(events, activeChecks) {
   let filtered = [];
   for (let event of events) {
-    if (checks.includes(event.category.toLowerCase().replace(' ', '-'))) {
+    if (activeChecks.includes(event.category.toLowerCase().replace(' ', '-'))) {
       filtered.push(event);
     }
   }
   return filtered;
 }
 let checks = document.querySelectorAll('input[type="checkbox"]');
-let activeChecks = [];
-checks.forEach((check) =>
-  check.addEventListener('change', (e) => {
-    let checkID = e.target.id;
-    if (activeChecks.includes(checkID)) {
-      activeChecks = activeChecks.filter((check) => check !== checkID);
-    } else {
-      activeChecks.push(checkID);
+
+checks.forEach((check) => check.addEventListener('change', crossFilters));
+
+function checksFilter(events) {
+  let activeChecks = [];
+  checks.forEach((check) => {
+    if (check.checked === true) {
+      if (activeChecks.includes(check.id)) {
+        activeChecks = activeChecks.filter((checkbox) => checkbox !== check.id);
+      } else {
+        activeChecks.push(check.id);
+      }
     }
-    let filtersTemplate = checksFilter(eventsCards, activeChecks);
-    if (filtersTemplate.length > 0) {
-      cards.innerHTML = showTemplate(filtersTemplate);
-    } else {
-      cards.innerHTML = showTemplate(eventsCards);
-    }
-  })
-);
+  });
+  if (activeChecks.length < 1) {
+    return events;
+  } else {
+    return checksEvents(events, activeChecks);
+  }
+}
+//render filtered events
+function crossFilters() {
+  let searchResults = searchFilter(searchBar);
+  let checksResults = checksFilter(searchResults);
+  if (checksResults.length < 1) {
+    cards.innerHTML = `<h3>No results. Try other filters/keywords.</h3>`;
+  } else {
+    cards.innerHTML = showTemplate(checksResults);
+  }
+}
