@@ -57,14 +57,19 @@ p {
   margin-block: 1rem;
 }
 .searchbar {
+  position: relative;
   margin: 1rem;
   max-width: 500px;
 }
 .searchbar input {
   padding: 0.7rem 1rem;
+  padding-left: 3rem;
 }
-.searchbar button {
-  height: 3rem;
+.searchbar::before {
+  content: '🔎';
+  position: absolute;
+  right: 85%;
+  top: 25%;
 }
 .dropdown-menu {
   padding: 0.5rem !important;
